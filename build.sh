@@ -347,9 +347,9 @@ fi
 # build zlib
 # -----------------------------------------------------------------------------
 if [ ! -f "$INSTALL_PATH"/lib/libz.a ]; then
-  wget -nc https://zlib.net/zlib-1.2.12.tar.gz
-  tar -xf zlib-1.2.12.tar.gz
-  cd zlib-1.2.12 || exit
+  wget -nc https://zlib.net/zlib-1.2.13.tar.gz
+  tar -xf zlib-1.2.13.tar.gz
+  cd zlib-1.2.13 || exit
   CC=$WGET_GCC ./configure --64 --static --prefix="$INSTALL_PATH"
   (($? != 0)) && { printf '%s\n' "[zlib] configure failed"; exit 1; }
   make
@@ -362,9 +362,9 @@ fi
 # build openssl
 # -----------------------------------------------------------------------------
 if [ ! -f "$INSTALL_PATH"/lib/libssl.a ]; then
-  wget -nc https://www.openssl.org/source/openssl-1.1.1q.tar.gz
-  tar -xf openssl-1.1.1q.tar.gz
-  cd openssl-1.1.1q || exit
+  wget -nc https://www.openssl.org/source/openssl-1.1.1t.tar.gz
+  tar -xf openssl-1.1.1t.tar.gz
+  cd openssl-1.1.1t || exit
   ./Configure \
   --static \
   -static \
@@ -383,9 +383,9 @@ fi
 # -----------------------------------------------------------------------------
 # build wget (gnuTLS)
 # -----------------------------------------------------------------------------
-wget -nc https://ftp.gnu.org/gnu/wget/wget-1.21.3.tar.gz
-tar -xf wget-1.21.3.tar.gz
-cd wget-1.21.3 || exit
+wget -nc https://ftp.gnu.org/gnu/wget/wget-1.21.4.tar.gz
+tar -xf wget-1.21.4.tar.gz
+cd wget-1.21.4 || exit
 CFLAGS="-I$INSTALL_PATH/include -DGNUTLS_INTERNAL_BUILD=1 -DCARES_STATICLIB=1 -DPCRE2_STATIC=1 -DNDEBUG -O2 -march=$WGET_ARCH -mtune=generic" \
  LDFLAGS="-L$INSTALL_PATH/lib -static -static-libgcc" \
  GNUTLS_CFLAGS=$CFLAGS \
