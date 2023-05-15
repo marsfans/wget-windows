@@ -34,9 +34,9 @@ fi
 # build nettle
 # -----------------------------------------------------------------------------
 if [ ! -f "$INSTALL_PATH"/lib/libnettle.a ]; then
-  wget -nc https://ftp.gnu.org/gnu/nettle/nettle-3.9.tar.gz
-  tar -xf nettle-3.8.tar.gz
-  cd nettle-3.8 || exit
+  wget -nc https://ftp.gnu.org/gnu/nettle/nettle-3.9.0.tar.gz
+  tar -xf nettle-3.9.0.tar.gz
+  cd nettle-3.9.0 || exit
   CFLAGS="-I$INSTALL_PATH/include" \
   LDFLAGS="-L$INSTALL_PATH/lib" \
   ./configure \
@@ -56,8 +56,8 @@ fi
 # -----------------------------------------------------------------------------
 if [ ! -f "$INSTALL_PATH"/lib/libtasn1.a ]; then
   wget -nc https://ftp.gnu.org/gnu/libtasn1/libtasn1-4.19.0.tar.gz
-  tar -xf libtasn1-4.18.0.tar.gz
-  cd libtasn1-4.18.0 || exit
+  tar -xf libtasn1-4.19.0.tar.gz
+  cd libtasn1-4.19.0 || exit
   ./configure \
    --host=$WGET_MINGW_HOST \
    --disable-shared \
@@ -111,7 +111,7 @@ fi
 # build gnutls
 # -----------------------------------------------------------------------------
 if [ ! -f "$INSTALL_PATH"/lib/libgnutls.a ]; then
-  wget -nc https://www.gnupg.org/ftp/gcrypt/gnutls/v3.7/gnutls-3.8.0.tar.xz
+  wget -nc https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.0.tar.xz
   tar -xf gnutls-3.8.0.tar.xz
   cd gnutls-3.8.0 || exit
   PKG_CONFIG_PATH="$INSTALL_PATH/lib/pkgconfig" \
