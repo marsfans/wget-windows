@@ -1,4 +1,4 @@
-# Windows binaries of GNU Wget 1.21.3
+# Windows binaries of GNU Wget 1.21.4
 
 [![wget](https://github.com/webfolderio/wget-windows/actions/workflows/wget.yml/badge.svg)](https://github.com/webfolderio/wget-windows/actions/workflows/wget.yml)
 
@@ -16,7 +16,7 @@ To learn how to use Wget, please refer to the official GNU Wget manual by clicki
 
 ### Build Environment
 
-Wget has been built using GitHub Actions and cross-compiled with mingw64 on Ubuntu, using GNU/gcc 9.3.
+Wget has been built using GitHub Actions and cross-compiled with mingw64 on Ubuntu, using GNU/gcc 10.3.
 It is completely safe to use and free from viruses.
 
 All the necessary libraries have been **statically linked**, so there is no need to use any third-party DLL.
