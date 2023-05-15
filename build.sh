@@ -235,9 +235,9 @@ fi
 # build gpg-error
 # -----------------------------------------------------------------------------
 if [ ! -f "$INSTALL_PATH"/lib/libgpg-error.a ]; then
-  wget -nc https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.47.tar.gz
-  tar -xf libgpg-error-1.47.tar.gz
-  cd libgpg-error-1.47 || exit
+  wget -nc https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.45.tar.gz
+  tar -xf libgpg-error-1.45.tar.gz
+  cd libgpg-error-1.45 || exit
   ./configure \
   --host=$WGET_MINGW_HOST \
   --disable-shared \
@@ -362,9 +362,9 @@ fi
 # build openssl
 # -----------------------------------------------------------------------------
 if [ ! -f "$INSTALL_PATH"/lib/libssl.a ]; then
-  wget -nc https://www.openssl.org/source/openssl-1.1.1t.tar.gz
-  tar -xf openssl-1.1.1t.tar.gz
-  cd openssl-1.1.1t || exit
+  wget -nc https://www.openssl.org/source/openssl-3.1.0.tar.gz
+  tar -xf openssl-3.1.0.tar.gz
+  cd openssl-3.1.0 || exit
   ./Configure \
   --static \
   -static \
