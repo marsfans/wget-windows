@@ -276,9 +276,9 @@ fi
 # build gpgme
 # -----------------------------------------------------------------------------
 if [ ! -f "$INSTALL_PATH"/lib/libgpgme.a ]; then
-  wget -nc https://gnupg.org/ftp/gcrypt/gpgme/gpgme-1.20.0.tar.bz2
-  tar -xf gpgme-1.20.0.tar.bz2
-  cd gpgme-1.20.0 || exit
+  wget -nc https://gnupg.org/ftp/gcrypt/gpgme/gpgme-1.17.1.tar.bz2
+  tar -xf gpgme-1.17.1.tar.bz2
+  cd gpgme-1.17.1 || exit
   ./configure \
   --host=$WGET_MINGW_HOST \
   --disable-shared \
@@ -302,9 +302,9 @@ fi
 # build expat
 # -----------------------------------------------------------------------------
 if [ ! -f "$INSTALL_PATH"/lib/libexpat.a ]; then
-  wget -nc https://github.com/libexpat/libexpat/releases/download/R_2_5_0/expat-2.5.0.tar.gz
-  tar -xf expat-2.5.0.tar.gz
-  cd expat-2.5.0 || exit
+  wget -nc https://github.com/libexpat/libexpat/releases/download/R_2_4_8/expat-2.4.8.tar.gz
+  tar -xf expat-2.4.8.tar.gz
+  cd expat-2.4.8 || exit
   ./configure \
   --host=$WGET_MINGW_HOST \
   --disable-shared \
@@ -347,9 +347,9 @@ fi
 # build zlib
 # -----------------------------------------------------------------------------
 if [ ! -f "$INSTALL_PATH"/lib/libz.a ]; then
-  wget -nc https://zlib.net/zlib-1.2.13.tar.gz
-  tar -xf zlib-1.2.13.tar.gz
-  cd zlib-1.2.13 || exit
+  wget -nc https://zlib.net/zlib-1.2.12.tar.gz
+  tar -xf zlib-1.2.12.tar.gz
+  cd zlib-1.2.12 || exit
   CC=$WGET_GCC CFLAGS="-m32 -march=i686" ./configure --static --prefix="$INSTALL_PATH"
   (($? != 0)) && { printf '%s\n' "[zlib] configure failed"; exit 1; }
   make
